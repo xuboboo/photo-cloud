@@ -1,0 +1,44 @@
+# robots.txt for Photo Cloud
+# 允许所有搜索引擎抓取
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /settings
+Disallow: /api/
+
+# 百度爬虫
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin
+Disallow: /settings
+
+# 谷歌爬虫
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /settings
+
+# 必应爬虫
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /settings
+
+# 360爬虫
+User-agent: 360Spider
+Allow: /
+Disallow: /admin
+Disallow: /settings
+
+# 搜狗爬虫
+User-agent: Sogou web spider
+Allow: /
+Disallow: /admin
+Disallow: /settings
+
+# Sitemap位置
+Sitemap: https://www.tournews.top/sitemap.xml
+
+# 爬取延迟（秒）
+Crawl-delay: 1

@@ -1,0 +1,12 @@
+{
+  "public": false,
+  "fileSizeLimit": 52428800,
+  "allowedMimeTypes": [
+    "image/jpeg",
+    "image/png",
+    "image/gif",
+    "image/webp",
+    "text/markdown",
+    "text/plain"
+  ]
+}

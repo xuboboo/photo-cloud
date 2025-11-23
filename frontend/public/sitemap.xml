@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 产品首页 - 最高优先级 -->
+  <url>
+    <loc>https://www.tournews.top/</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 登录页 - 重要入口 -->
+  <url>
+    <loc>https://www.tournews.top/login</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Dashboard - 用户工作台 -->
+  <url>
+    <loc>https://www.tournews.top/dashboard</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 上传文件页 -->
+  <url>
+    <loc>https://www.tournews.top/upload</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 个人设置页 -->
+  <url>
+    <loc>https://www.tournews.top/settings</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 管理后台 -->
+  <url>
+    <loc>https://www.tournews.top/admin</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- 创建文档页 -->
+  <url>
+    <loc>https://www.tournews.top/create</loc>
+    <lastmod>2025-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 
+    动态页面说明：
+    以下页面是动态生成的，需要参数：
+    - /preview/:id - 文件预览页（动态）
+    - /edit/:id - 编辑文档页（动态）
+    - /share/:token - 分享页（动态）
+    
+    这些页面不包含在sitemap中，因为它们需要用户特定的ID或token
+  -->
+
+</urlset>

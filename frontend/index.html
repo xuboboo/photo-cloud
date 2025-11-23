@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     
+    <!-- 多语言声明 -->
+    <meta http-equiv="content-language" content="zh-CN, en-US, ja-JP, ko-KR, es-ES, fr-FR, de-DE" />
+    
     <!-- Favicon 图标 -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
@@ -70,36 +73,62 @@
     <meta name="twitter:description" content="安全可靠的云存储服务，免费1GB存储空间" />
     <meta name="twitter:image" content="https://www.tournews.top/twitter-image.png" />
     
-    <!-- Schema.org 结构化数据 (JSON-LD) -->
+    <!-- Schema.org 结构化数据 (JSON-LD) - 多语言支持 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "Photo Cloud",
+      "alternateName": [
+        "フォトクラウド",
+        "포토 클라우드",
+        "Nube de Fotos",
+        "Nuage Photo",
+        "Foto-Cloud"
+      ],
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Web",
+      "inLanguage": ["zh-CN", "en-US", "ja-JP", "ko-KR", "es-ES", "fr-FR", "de-DE"],
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "CNY"
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "ratingCount": "1250"
+        "ratingCount": "1250",
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "description": "专业的云相册管理系统，提供安全可靠的云存储服务",
+      "description": "Professional cloud album management system with secure cloud storage service. Support for image upload, online preview, file sharing. Available in 7 languages.",
       "url": "https://www.tournews.top/",
       "image": "https://www.tournews.top/logo.png",
       "publisher": {
         "@type": "Organization",
         "name": "Photo Cloud Technology Studio",
         "email": "news@tournews.top",
-        "url": "https://www.tournews.top/"
+        "url": "https://www.tournews.top/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tournews.top/logo.png"
+        }
       },
       "browserRequirements": "Requires JavaScript",
-      "softwareVersion": "1.0.0",
-      "releaseDate": "2025-11-23"
+      "softwareVersion": "2.0.0",
+      "releaseDate": "2025-11-23",
+      "potentialAction": {
+        "@type": "UseAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.tournews.top/",
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ]
+        }
+      }
     }
     </script>
     

@@ -1,13 +1,43 @@
 /**
  * SEO工具函数
- * 用于动态设置页面meta标签
+ * 用于动态设置页面meta标签，支持多语言和国际化
  */
+
+import { SUPPORT_LOCALES } from '../i18n'
 
 /**
  * 设置页面标题
  */
 export function setPageTitle(title) {
   document.title = title ? `${title} - Photo Cloud` : 'Photo Cloud - 专业云相册管理系统'
+}
+
+/**
+ * 设置 hreflang 标签（多语言支持）
+ */
+export function setHreflangTags() {
+  // 移除现有的 hreflang 标签
+  const existingTags = document.querySelectorAll('link[rel="alternate"]')
+  existingTags.forEach(tag => tag.remove())
+  
+  const currentPath = window.location.pathname
+  const baseUrl = window.location.origin
+  
+  // 为每种支持的语言添加 hreflang 标签
+  SUPPORT_LOCALES.forEach(locale => {
+    const link = document.createElement('link')
+    link.rel = 'alternate'
+    link.hreflang = locale.code
+    link.href = `${baseUrl}${currentPath}?lang=${locale.code}`
+    document.head.appendChild(link)
+  })
+  
+  // 添加 x-default
+  const defaultLink = document.createElement('link')
+  defaultLink.rel = 'alternate'
+  defaultLink.hreflang = 'x-default'
+  defaultLink.href = `${baseUrl}${currentPath}`
+  document.head.appendChild(defaultLink)
 }
 
 /**
@@ -67,6 +97,9 @@ export function setPageSEO({ title, description, keywords, ogImage }) {
   if (ogImage) {
     setOgTag('og:image', ogImage)
   }
+  
+  // 设置 hreflang 标签（多语言SEO）
+  setHreflangTags()
 }
 
 /**

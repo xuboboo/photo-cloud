@@ -9,9 +9,10 @@
       <div class="footer-links">
         <div class="link-column">
           <h4>产品</h4>
-          <a href="/">首页</a>
-          <a href="/dashboard">工作台</a>
-          <a href="/upload">上传文件</a>
+          <router-link to="/">首页</router-link>
+          <router-link to="/dashboard">工作台</router-link>
+          <router-link to="/upload">上传文件</router-link>
+          <router-link to="/blog">博客</router-link>
         </div>
         <div class="link-column">
           <h4>支持</h4>

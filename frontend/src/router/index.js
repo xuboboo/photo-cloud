@@ -14,6 +14,7 @@ const Settings = () => import('../pages/Settings.vue')
 const CreateDocument = () => import('../pages/CreateDocument.vue')
 const EditDocument = () => import('../pages/EditDocument.vue')
 const Share = () => import('../pages/Share.vue')
+const Blog = () => import('../pages/Blog.vue')
 
 const routes = [
   {
@@ -125,6 +126,17 @@ const routes = [
       title: '文件分享',
       description: '查看和下载分享的文件。安全的文件分享服务，支持密码保护和下载限制。',
       keywords: '文件分享,下载文件,分享链接,公开分享'
+    }
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog,
+    meta: { 
+      requiresAuth: false,
+      title: 'Blog',
+      description: 'Photo Cloud blog with tips, tutorials, and updates. Learn how to get the most out of your cloud storage.',
+      keywords: 'Photo Cloud blog,cloud storage tips,photo management tutorials,updates'
     }
   }
 ]

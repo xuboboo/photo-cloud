@@ -3,6 +3,8 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import i18n from './i18n'
+import lazyload from './directives/lazyload'
+import webVitals from './utils/webVitals'
 import './style.css'
 
 // 禁止移动端双指缩放和双击缩放
@@ -34,5 +36,7 @@ const pinia = createPinia()
 app.use(pinia)
 app.use(router)
 app.use(i18n)
+app.use(lazyload)
+app.use(webVitals)
 
 app.mount('#app')

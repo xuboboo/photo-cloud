@@ -15,6 +15,7 @@ const CreateDocument = () => import('../pages/CreateDocument.vue')
 const EditDocument = () => import('../pages/EditDocument.vue')
 const Share = () => import('../pages/Share.vue')
 const Blog = () => import('../pages/Blog.vue')
+const BlogDetail = () => import('../pages/BlogDetail.vue')
 
 const routes = [
   {
@@ -137,6 +138,17 @@ const routes = [
       title: 'Blog',
       description: 'Photo Cloud blog with tips, tutorials, and updates. Learn how to get the most out of your cloud storage.',
       keywords: 'Photo Cloud blog,cloud storage tips,photo management tutorials,updates'
+    }
+  },
+  {
+    path: '/blog/:slug',
+    name: 'BlogDetail',
+    component: BlogDetail,
+    meta: { 
+      requiresAuth: false,
+      title: 'Blog Article',
+      description: 'Read our latest articles about cloud storage, photography, and file management.',
+      keywords: 'Photo Cloud,blog article,tutorial,guide'
     }
   }
 ]

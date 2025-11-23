@@ -193,6 +193,19 @@ export default {
     unknownError: '未知错误'
   },
   
+  blog: {
+    title: 'Photo Cloud 博客',
+    subtitle: '来自 Photo Cloud 团队的技巧、教程和更新',
+    searchPlaceholder: '搜索文章...',
+    noResults: '未找到文章',
+    tryDifferent: '尝试不同的关键词或分类',
+    readMore: '阅读更多',
+    newsletter: '订阅我们的邮件',
+    newsletterDesc: '获取最新更新和技巧，直接发送到您的收件箱',
+    emailPlaceholder: '输入您的邮箱',
+    subscribe: '订阅'
+  },
+  
   seo: {
     title: 'Photo Cloud - 专业云相册管理系统',
     description: '安全可靠的云存储服务，支持图片上传、在线预览、文件分享。免费1GB存储，企业级安全保护，多端同步。',

@@ -193,6 +193,19 @@ export default {
     unknownError: 'Unknown error'
   },
   
+  blog: {
+    title: 'Photo Cloud Blog',
+    subtitle: 'Tips, tutorials, and updates from the Photo Cloud team',
+    searchPlaceholder: 'Search articles...',
+    noResults: 'No articles found',
+    tryDifferent: 'Try different keywords or categories',
+    readMore: 'Read More',
+    newsletter: 'Subscribe to our newsletter',
+    newsletterDesc: 'Get the latest updates and tips delivered to your inbox',
+    emailPlaceholder: 'Enter your email',
+    subscribe: 'Subscribe'
+  },
+  
   seo: {
     title: 'Photo Cloud - Professional Cloud Album Management System',
     description: 'Secure cloud storage service with image upload, online preview, and file sharing. Free 1GB storage with enterprise-level security.',

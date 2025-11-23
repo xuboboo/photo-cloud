@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { nextTick } from 'vue'
 import { supabase } from '../api/supabase'
 import { setPageSEO } from '../utils/seo'
 
@@ -211,7 +212,7 @@ router.beforeEach(async (to, from, next) => {
   }
 })
 
-// 路由跳转后更新SEO信息
+// 路由跳转后更新SEO信息并滚动到顶部
 router.afterEach((to) => {
   // 使用路由meta中的SEO信息
   if (to.meta.title || to.meta.description || to.meta.keywords) {
@@ -221,6 +222,16 @@ router.afterEach((to) => {
       keywords: to.meta.keywords
     })
   }
+  
+  // 移动端优化：路由切换时滚动到顶部
+  // 使用 nextTick 确保DOM已更新
+  nextTick(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // 移动端使用 instant 避免动画卡顿
+    })
+  })
 })
 
 // 清除权限缓存的函数（登出时调用）

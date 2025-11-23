@@ -91,10 +91,22 @@ body {
   color: var(--gray-900);
   font-size: 16px;
   line-height: 1.5;
+  /* 移动端优化：防止页面被下拉 */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 移动端：确保页面加载时在顶部 */
+html {
+  scroll-behavior: smooth;
 }
 
 #app {
   min-height: 100vh;
+  /* 移动端优化：使用 dvh 单位（动态视口高度） */
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* 滚动条美化 */

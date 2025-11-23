@@ -139,6 +139,8 @@ const CACHE_DURATION = 5 * 60 * 1000 // 5分钟缓存
 
 // 全局路由守卫 - 登录拦截和权限检查
 router.beforeEach(async (to, from, next) => {
+  console.log('路由跳转:', from.path, '->', to.path, 'meta:', to.meta)
+  
   const requiresAuth = to.meta.requiresAuth !== false
   const requiresAdmin = to.meta.requiresAdmin === true
 

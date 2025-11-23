@@ -189,21 +189,36 @@ async function handleSubmit() {
         return
       }
       
-      const result = await register(email.value, password.value)
-      const user = result?.user || result?.data?.user
-      
-      if (user) {
-        alert('注册成功！请检查邮箱验证链接（如果启用了邮箱验证）')
-        isLogin.value = true
-        // 清空表单
-        email.value = ''
-        password.value = ''
-      } else {
-        // 注册成功但需要邮箱验证
-        alert('注册成功！请检查邮箱并点击验证链接后再登录')
-        isLogin.value = true
-        email.value = ''
-        password.value = ''
+      try {
+        const result = await register(email.value, password.value)
+        const user = result?.user || result?.data?.user
+        
+        // 检查是否因为邮箱已存在而失败
+        if (!user && result?.error) {
+          throw result.error
+        }
+        
+        if (user) {
+          alert('注册成功！请检查邮箱验证链接（如果启用了邮箱验证）')
+          isLogin.value = true
+          // 清空表单
+          email.value = ''
+          password.value = ''
+        } else {
+          // 注册成功但需要邮箱验证
+          alert('注册成功！请检查邮箱并点击验证链接后再登录')
+          isLogin.value = true
+          email.value = ''
+          password.value = ''
+        }
+      } catch (registerError) {
+        // 处理注册错误，特别是邮箱已存在的情况
+        if (registerError.message && registerError.message.includes('already registered')) {
+          throw new Error('该邮箱已被注册，请直接登录')
+        } else if (registerError.message && registerError.message.includes('User already registered')) {
+          throw new Error('该邮箱已被注册，请直接登录')
+        }
+        throw registerError
       }
     }
   } catch (err) {

@@ -1,0 +1,33 @@
+# 安全检查工作流
+name: Security Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # 检查是否意外提交了敏感文件
+      - name: Check for sensitive files
+        run: |
+          if [ -f "frontend/.env" ]; then
+            echo "❌ Error: .env file found in repository!"
+            exit 1
+          fi
+          if grep -r "service_role" --include="*.js" --include="*.vue" --include="*.json" .; then
+            echo "⚠️  Warning: 'service_role' keyword found in code!"
+            exit 1
+          fi
+          echo "✅ No sensitive files detected"
+      
+      # 检查依赖漏洞
+      - name: npm audit
+        run: |
+          cd frontend
+          npm audit --audit-level=moderate

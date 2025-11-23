@@ -460,17 +460,35 @@ export async function checkEmailBlacklisted(email) {
 }
 
 /**
- * 注册前检查邮箱（包含黑名单检查）
+ * 注册前检查邮箱（包含黑名单检查和邮箱存在性检查）
  */
 export async function checkEmailBeforeSignup(email) {
   try {
+    // 1. 检查邮箱是否已在 auth.users 中注册
+    const { data: emailCheck, error: emailError } = await supabase
+      .rpc('check_email_exists', {
+        check_email: email
+      })
+    
+    if (emailError) {
+      console.error('检查邮箱存在性失败:', emailError)
+    }
+    
+    if (emailCheck && emailCheck.exists) {
+      return {
+        allowed: false,
+        message: '该邮箱已被注册，请直接登录或使用其他邮箱'
+      }
+    }
+    
+    // 2. 检查黑名单
     const { data, error } = await supabase
       .rpc('check_email_before_signup', {
         check_email: email
       })
     
     if (error) throw error
-    return data
+    return data || { allowed: true, message: '' }
   } catch (error) {
     console.error('检查邮箱失败:', error)
     return { allowed: true, message: '检查失败，允许继续' }

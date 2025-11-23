@@ -45,7 +45,7 @@ Start your journey with Photo Cloud today!
     date: '2025-11-23',
     category: 'Tutorial',
     tags: ['Getting Started', 'Tutorial', 'Guide'],
-    image: '/blog/getting-started.jpg',
+    image: 'https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=800&h=400&fit=crop',
     readTime: '5 min read',
     language: 'en'
   },
@@ -93,7 +93,7 @@ Stay secure with Photo Cloud!
     date: '2025-11-20',
     category: 'Security',
     tags: ['Security', 'Encryption', 'Privacy'],
-    image: '/blog/security.jpg',
+    image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop',
     readTime: '7 min read',
     language: 'en'
   },
@@ -143,7 +143,7 @@ Join thousands of satisfied users today!
     date: '2025-11-18',
     category: 'Comparison',
     tags: ['Comparison', 'Features', 'Review'],
-    image: '/blog/comparison.jpg',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop',
     readTime: '6 min read',
     language: 'en'
   },
@@ -227,7 +227,7 @@ Start creating beautiful documents today!
     date: '2025-11-15',
     category: 'Tutorial',
     tags: ['Markdown', 'Tutorial', 'Documentation'],
-    image: '/blog/markdown.jpg',
+    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=400&fit=crop',
     readTime: '8 min read',
     language: 'en'
   },
@@ -296,7 +296,7 @@ Happy shooting!
     date: '2025-11-10',
     category: 'Photography',
     tags: ['Photography', 'Tips', 'Mobile'],
-    image: '/blog/photography.jpg',
+    image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=400&fit=crop',
     readTime: '5 min read',
     language: 'en'
   }
